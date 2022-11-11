@@ -1,0 +1,156 @@
+<!-- 
+		Name: <Jelani Cheatham>
+		Date: <6/16/2022>
+		Class: CSCI2447, Javascript Fundamentals
+		Project 1
+ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+	
+    <title>The Ninja Game(CSCI2447)</title>
+    
+    <!-- CSS styles: This is for me to worry about; not you. -->
+	<link href="css/game.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script>
+		let score;
+		score = 0;
+		let scoreHTML;
+		scoreHTML = $('#score');
+	
+		let secondsRemaning;
+		secondsRemaning = [30]; 
+		let secondsHTML;
+		secondsHTML = $('#timer');
+		var decrease = 1;
+		var increase = 1;
+		let firstName;
+		
+		var newMouse = 'img/cur1152.ani';
+		var ninjaImg = 'img/Ninja3.png';
+		
+		let t;
+		//firstName = $(inputsName);
+		$(document).ready(function()
+							{
+		
+		var inputsName = prompt('First Name?');
+		if (typeof inputsName == 'string'){
+			prompt('are you ready to start ' + inputsName);
+			
+		} 
+		var name = 'bob n" burgers'
+		
+		
+		$('#start_button').click(function(){
+			beginGame();
+			$(this).effect('shake');
+			$(this).off();
+		})
+		$('#start_button').css({'background-color': '#faf0e6', 'font-size': '18px', 'font-family': "Comic Sans Ms"})
+		
+		$('#gamespace').on('click','img',function(){
+			scoreInc();
+			$('#gamespace img').hide();
+		})
+		
+		
+	});
+
+	
+	// functions 
+	function beginGame(){
+		timerDec();
+		addImage();
+		
+		//scoreInc();
+	}
+	function scoreInc(){
+			score += increase;
+			$('#score').html(score + ' pts');	
+	};
+
+	function timerDec(){
+		secondsRemaning -= decrease;
+		$('#timer').html(secondsRemaning + ' Seconds Left');
+		t = setTimeout('timerDec()', 1000);
+		if (secondsRemaning == 0){
+			reset();
+		}
+
+ 	};
+
+	function generateRandomIntX(max){
+		return Math.floor(Math.random()* 500) + 1;
+	}
+	
+	function generateRandomIntY(max){
+		return Math.floor(Math.random()* 250) + 1;
+	}
+
+	function generateRandomInt(max){
+		return Math.floor(Math.random()* 2000) + 1;
+	}
+	
+	function addImage(){
+		var xPos = generateRandomIntY(); 
+		var yPos = generateRandomIntX();
+		$("#gamespace").append('<img src="'+ninjaImg+'" style="top:'+xPos+'px;left:'+yPos+'px; "/>');
+		t1 = setTimeout('addImage()',generateRandomInt());
+		
+	}
+	function reset(){
+		alert('your score was ' + score);
+		$('#gamespace img').hide();
+		score = 0;
+		$('#score').html(score + ' pts');
+		secondsRemaning = 30;
+		$('#timer').html(secondsRemaning + ' Seconds Left');
+		clearTimeout(t);
+		clearTimeout(t1);
+		$('#start_button').click(function(){
+			beginGame();
+			$(this).effect('shake');
+		})
+		
+	}
+
+	
+
+		
+	
+	</script>
+  </head>
+  <body>
+
+	<div id="content">
+
+		<h1><center>The Ninja Game</center><img id="logo" src="img/Ninja3.png"></h1>
+		
+		<p>Welcome to the Ninja game, after clicking "start", you will have 30 seconds to click on the image that pops up for 1 point. Let the games begin!
+				</p>
+		
+		<div id="controls">
+			<span id="score"></span>
+			<button type="button" id="start_button">Start!</button>
+		</div>
+		<div class='timerDiv' >
+			<p id = timer></p>
+
+		</div>
+
+		
+		
+		<div id="gamespace" > 
+			
+			
+			
+		</div>
+		
+	</div>
+  </body>
+</html>

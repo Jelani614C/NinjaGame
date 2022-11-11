@@ -1,0 +1,49 @@
+<!-- 
+		Name: <Jelani Cheatham>
+		Date: <6/16/2022>
+		Class: CSCI2447, Javascript Fundamentals
+		Project 1
+ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+	
+    <title>The Ninja Game(CSCI2447)</title>
+    
+    <!-- CSS styles: This is for me to worry about; not you. -->
+	<link href="css/game.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script>$(function(){
+    
+		inputsName = prompt('First Name?');
+	});
+	let firstName;
+	firstName = inputsName;
+	</script>
+  </head>
+  <body>
+
+	<div id="content">
+
+		<h1><center>The Ninja Game</center><img id="logo" src="img/ninja3.png"></h1>
+		
+		<p>Welcome to the Ninja game, after clicking "start", you will have 30 seconds to dodge the incoming arrows. Let the games begin!
+			</p>
+		
+		<div id="controls">
+			<span id="score">0 pts</span>
+			<button type="button" id="start_button">Start!</button>
+		</div>
+		
+		
+		
+		<div id="gamespace" >
+
+			<img class="gameimage" src="img/ninja3.png" />
+			
+		</div>
+		
+	</div>
+  </body>
+</html>
