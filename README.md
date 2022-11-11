@@ -4,4 +4,4 @@ This is the Ninja Game. The goal is to click each ninja that pops up - each ninj
 ## Setup
 * clone repo: `clone https://github.com/Jelani614C/NinjaGame.git`
 
-* Open `NinjaGame/Index.HTML` in your browser to access the game.
+* open `NinjaGame/Index.HTML` in your browser to access the game
