@@ -1,0 +1,63 @@
+/* CSS Document */
+
+html, body {
+	
+	margin: 0 auto;
+	font-family: "Comic Sans Ms", "Comic Sans", cursive;
+	font-size: 13px;
+	color: white;
+	background-color: #faf0e6; }
+	
+h1 {
+	margin: 2px;
+	font-size: 50px;}
+	
+button {
+	font-size: 12px;
+	font-weight: bold;
+	padding: 8px; }
+	
+div#content {
+    width: 700px;
+    margin:0 auto;
+	padding: 20px;
+	background-color: #c19a6b; }
+	
+div#controls {
+	text-align: right; }
+	
+div#controls span {
+	font-weight: bold;
+	color: #990000; }
+	
+div#controls button {
+	margin-left: 20px; }
+	
+
+	
+div#gamespace {
+	margin: 20px;
+	padding: 10px;
+	height: 350px;
+	background-image: url(../img/gameLevel.png);
+	border: 2px solid #CCC; 
+	cursor: pointer;
+
+}
+div#gamespace img { position: absolute; }
+div#gamespace { position: relative; }
+
+div img {
+	height: 120px;
+}
+h1 img {
+	float: right;
+	height: 80px;
+	margin-right: 45px;
+}
+.timerDiv {
+font-weight: bold;
+font-family: "Comic Sans Ms", "Comic Sans", cursive;
+font-size: 25 px;
+color: black;
+}
